@@ -15,13 +15,13 @@ filterOption.addEventListener('click', filterTodo);
 
 function addTodo(event) {
     event.preventDefault();
-    // console.log('Hello');
     // To do Div
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
     //li
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
+    console.log(newTodo.innerText);
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
     // Add todo in storge

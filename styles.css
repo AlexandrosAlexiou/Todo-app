@@ -6,7 +6,8 @@
 }
 
 body {
-    background-image: linear-gradient(120deg, #dd3e54, #6be585) ;
+    /*background-image: linear-gradient(120deg, #dd3e54, #6be585) ;*/
+    background-color: #1b1e27;
     color: white;
     font-family: "Gochi Hand", sans-serif;
     min-height: 100vh;
@@ -59,7 +60,7 @@ form button:hover {
 .todo {
     margin: 0.5rem;
     background: white;
-    color: black;
+    color: #1b1e27;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
