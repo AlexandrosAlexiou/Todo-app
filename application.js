@@ -12,7 +12,6 @@ todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('click', filterTodo);
 
 // functions
-
 function addTodo(event) {
     event.preventDefault();
     // To do Div
@@ -21,7 +20,9 @@ function addTodo(event) {
     //li
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
-    console.log(newTodo.innerText);
+    if(!newTodo.innerText) {
+        return;
+    }
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
     // Add todo in storge
