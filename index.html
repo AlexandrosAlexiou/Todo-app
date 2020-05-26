@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Alex's Todo List </title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Alex's ToDo List</h1>
+    </header>
+    <form>
+        <label>
+            <input type="text" class="todo-input">
+        </label>
+        <button class="todo-button" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
+        <!--
+        <div class="select">
+            <label>
+                <select name="todos" class="filter-todo">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </label>
+        </div>
+        -->
+        <div class="buttons-filter">
+            <button value="all">All</button>
+            <button value="completed">Completed</button>
+            <button value="uncompleted">Uncompleted</button>
+        </div>
+    </form>
+    <div class="todo-container">
+        <ul class="todo-list"></ul>
+    </div>
+    <script src="./application.js"></script>
+</body>
+</html>
