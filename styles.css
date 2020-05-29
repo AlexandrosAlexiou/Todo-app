@@ -103,11 +103,6 @@ form button:hover {
     opacity: 0.6;
 }
 
-.uncompleted {
-    text-decoration: none;
-    opacity: 1;
-}
-
 .fall {
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;
