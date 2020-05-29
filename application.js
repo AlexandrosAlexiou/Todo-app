@@ -25,8 +25,8 @@ function addTodo(event) {
     }
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
-    // Add todo in storge
-    saveLocalTodos(todoInput.value);
+    // Add to do in storage
+    saveLocalTodo(todoInput.value);
     // Check mark button
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -50,7 +50,7 @@ function deleteCheck(event) {
     // console.log(item.classList);
    if(item.classList[0] === 'trash-btn') {
        const todo = item.parentElement;
-       //Animation
+       // Animation
        todo.classList.add('fall');
        removeLocalTodos(todo);
        todo.addEventListener('transitionend', () => {
@@ -61,7 +61,30 @@ function deleteCheck(event) {
    // check mark
     if(item.classList[0] === 'complete-btn') {
         const todo = item.parentElement;
-        todo.classList.toggle("completed");
+        const todos = JSON.parse(localStorage.getItem('todos'));
+        if (todos.length !== 0) {
+            todos.forEach( todo_element => {
+                if (todo.innerText === todo_element.text) {
+                    if (todo_element.state !== 'completed') {
+                        todo_element.state = 'completed';
+                        if (todo.classList.contains("completed")) {
+                            todo.style.textDecoration ='line-through';
+                            todo.style.opacity = '0.6';
+                        } else {
+                            todo.classList.toggle("completed");
+                        }
+                    } else {
+                        todo_element.state = 'uncompleted';
+                        if (todo.classList.contains("completed")) {
+                            todo.style.textDecoration ='none';
+                            todo.style.opacity = '1';
+                        }
+                    }
+                }
+            });
+        }
+        localStorage.removeItem('todos');
+        localStorage.setItem('todos', JSON.stringify(todos));
     }
 }
 
@@ -92,14 +115,15 @@ function filterTodo(event) {
     });
 }
 
-function saveLocalTodos(todo) {
+function saveLocalTodo(todo) {
     let todos;
     if(localStorage.getItem('todos') === null) {
         todos = [];
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
-    todos.push(todo);
+    // console.log(todos);
+    todos.push({text: todo, state: 'uncompleted'});
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
@@ -116,7 +140,7 @@ function getTodos() {
         todoDiv.classList.add('todo');
         //li
         const newTodo = document.createElement('li');
-        newTodo.innerText = todo;
+        newTodo.innerText = todo.text;
         newTodo.classList.add('todo-item');
         todoDiv.appendChild(newTodo);
         // Check mark button
@@ -131,6 +155,9 @@ function getTodos() {
         todoDiv.appendChild(trashButton);
         // Append to list
         todoList.appendChild(todoDiv);
+        if (todo.state === 'completed') {
+            newTodo.parentElement.classList.toggle("completed");
+        }
     })
 }
 

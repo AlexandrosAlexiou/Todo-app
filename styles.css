@@ -66,6 +66,7 @@ form button:hover {
     justify-content: space-between;
     align-items: center;
     transition: all 0.2s ease;
+    width: 70vh;
 }
 
 .todo li {
@@ -100,6 +101,11 @@ form button:hover {
 .completed {
     text-decoration: line-through;
     opacity: 0.6;
+}
+
+.uncompleted {
+    text-decoration: none;
+    opacity: 1;
 }
 
 .fall {
