@@ -92,9 +92,11 @@ form button:hover {
     padding-bottom: 7px;
     padding-top: 8px;
 }
+
 button.todo-button {
     margin-right: 4px;
 }
+
 .todo-item {
     padding: 0 1rem;
 }

@@ -67,18 +67,10 @@ function deleteCheck(event) {
                 if (todo.innerText === todo_element.text) {
                     if (todo_element.state !== 'completed') {
                         todo_element.state = 'completed';
-                        if (todo.classList.contains("completed")) {
-                            todo.style.textDecoration ='line-through';
-                            todo.style.opacity = '0.6';
-                        } else {
-                            todo.classList.toggle("completed");
-                        }
+                        todo.classList.toggle("completed");
                     } else {
                         todo_element.state = 'uncompleted';
-                        if (todo.classList.contains("completed")) {
-                            todo.style.textDecoration ='none';
-                            todo.style.opacity = '1';
-                        }
+                        todo.classList.remove("completed");
                     }
                 }
             });
@@ -91,7 +83,6 @@ function deleteCheck(event) {
 function filterTodo(event) {
     event.preventDefault();
     const todos = todoList.childNodes;
-    // console.log(event.target.value);
     todos.forEach( todo => {
         switch (event.target.value) {
             case "all":
