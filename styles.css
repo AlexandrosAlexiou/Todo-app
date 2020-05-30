@@ -88,6 +88,7 @@ form button:hover {
 
 .todo-input {
     width: 40vh;
+    font-family: "Gochi Hand", sans-serif;
 }
 
 .todo-item {
