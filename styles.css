@@ -17,6 +17,10 @@ header {
     font-size: 2rem;
 }
 
+h1 {
+    color: #6be585;
+}
+
 header, form {
     min-height: 20vh;
     display: flex;

@@ -21,6 +21,7 @@ function addTodo(event) {
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
     if(!newTodo.innerText) {
+        alert('So you want to do nothing?\nWrite something you want to do!🙂');
         return;
     }
     newTodo.classList.add('todo-item');
