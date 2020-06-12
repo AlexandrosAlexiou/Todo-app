@@ -90,6 +90,15 @@ form button:hover {
     background: #6be585;
 }
 
+.trash-btn:hover {
+    background: #a72d3e;
+}
+
+.complete-btn:hover {
+    background: #4ca55f;
+}
+
+
 .todo-input {
     width: 40vh;
     font-family: "Gochi Hand", sans-serif;
